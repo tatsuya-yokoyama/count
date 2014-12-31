@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     var currentTime = NSDate()
     // 新年までの時間
     var restTime : Int = 1000
-    // 新年になる時刻(GMTで定義)
-    let newTimeStr : String = "2015/01/01 09:00:00:000"
+    // 新年になる時刻
+    let newTimeStr : String = "2015/01/01 00:00:00:000"
+    let afterTime = NSDate(timeIntervalSinceNow: 10);
     // 時刻を扱うクラス(後で色々使う)
     var dateFormatter : NSDateFormatter = NSDateFormatter()
     // 更新されたことのデバッグ用のイテレータ
@@ -29,12 +30,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var myLabelHNY: UILabel!
     @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var myImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        myImage!.image = UIImage(named:"soba.jpeg")
         setConfig()
         makeView()
         // 更新
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1/3, target: self, selector: "updateView", userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1/100, target: self, selector: "updateView", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +57,8 @@ class ViewController: UIViewController {
     }
     // 残り時間を計算
     func calcRestTime() -> Int {
-        let newTime = dateFormatter.dateFromString(self.newTimeStr)!
+        var newTime = dateFormatter.dateFromString(self.newTimeStr)!
+       // newTime = afterTime // デバッグ用
         var rest = newTime.timeIntervalSinceNow
         return Int(rest)
     }
@@ -63,7 +67,7 @@ class ViewController: UIViewController {
         self.restTime = calcRestTime()
         if !self.isChanged {
             // 切り替え前
-            if self.restTime > 69690 {
+            if self.restTime > 0 {
                 currentTime = NSDate()
                 makeView()
                 println("before \(i++), \(self.restTime)")

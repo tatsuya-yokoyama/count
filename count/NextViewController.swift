@@ -10,13 +10,13 @@ import UIKit
 
 class NextViewController: UIViewController {
 
-    @IBOutlet weak var myImage: UIImageView!
     var i = 0
+    let imageNum = 34
+    @IBOutlet weak var myImage: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let img = UIImage(named:"omedeto.jpeg")
-        myImage!.image = img
-        // Do any additional setup after loading the view.
+        myImage!.image = UIImage(named:"omedeto.jpeg")
         NSTimer.scheduledTimerWithTimeInterval(1/10, target: self, selector: "updateView", userInfo: nil, repeats: true)
     }
 
@@ -28,18 +28,18 @@ class NextViewController: UIViewController {
         if i++ < 1 {
             sleep(3)
         }
-        var rand = Int(arc4random()%34)+1
-        var randStr = String(rand)
-        //println(rand)
-        if ++i > 1000 {
-            randStr = "omedeto"
-        }
-        let img = UIImage(named:"\(randStr).jpeg")
-       // println("view")
-        myImage!.image = img
-       
-    }
+        // arc4random()の戻り値に合わせてUInt32で除算
+        var rand = Int(arc4random() % UInt32(self.imageNum)) + 1
 
+        if ++i > 1000 {
+            setOmedetoImage()
+        } else {
+            myImage!.image = UIImage(named:"\(rand).jpeg")
+        }
+    }
+    func setOmedetoImage() {
+        myImage!.image = UIImage(named:"omedeto.jpeg")
+    }
     /*
     // MARK: - Navigation
 
@@ -49,5 +49,4 @@ class NextViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

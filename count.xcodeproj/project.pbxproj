@@ -50,6 +50,8 @@
 		74F5ACA31A53B2FA00519C58 /* 14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 74F5AC8D1A53B2FA00519C58 /* 14.jpeg */; };
 		74F5ACA41A53B2FA00519C58 /* 13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 74F5AC8E1A53B2FA00519C58 /* 13.jpeg */; };
 		74F5ACA71A53B8D100519C58 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74F5ACA61A53B8D100519C58 /* music.mp3 */; };
+		74F5ACA91A5411E500519C58 /* toshikoshi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 74F5ACA81A5411E500519C58 /* toshikoshi.jpeg */; };
+		74F5ACAB1A5412B300519C58 /* soba.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 74F5ACAA1A5412B300519C58 /* soba.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		74F5AC8D1A53B2FA00519C58 /* 14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpeg; sourceTree = "<group>"; };
 		74F5AC8E1A53B2FA00519C58 /* 13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpeg; sourceTree = "<group>"; };
 		74F5ACA61A53B8D100519C58 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		74F5ACA81A5411E500519C58 /* toshikoshi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = toshikoshi.jpeg; sourceTree = "<group>"; };
+		74F5ACAA1A5412B300519C58 /* soba.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soba.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 		7408E7591A528BFD00883419 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				74F5ACAA1A5412B300519C58 /* soba.jpeg */,
+				74F5ACA81A5411E500519C58 /* toshikoshi.jpeg */,
 				74F5AC5D1A53ADDA00519C58 /* 12.jpeg */,
 				74F5AC5E1A53ADDA00519C58 /* 9.jpeg */,
 				74F5AC5F1A53ADDA00519C58 /* 11.jpeg */,
@@ -311,6 +317,7 @@
 				74F5AC921A53B2FA00519C58 /* 31.jpeg in Resources */,
 				7408E7611A528BFD00883419 /* Main.storyboard in Resources */,
 				74F5AC911A53B2FA00519C58 /* 32.jpeg in Resources */,
+				74F5ACA91A5411E500519C58 /* toshikoshi.jpeg in Resources */,
 				7408E7661A528BFD00883419 /* LaunchScreen.xib in Resources */,
 				74F5ACA41A53B2FA00519C58 /* 13.jpeg in Resources */,
 				74F5AC731A53ADDA00519C58 /* 4.jpeg in Resources */,
@@ -328,6 +335,7 @@
 				74F5AC6F1A53ADDA00519C58 /* omedeto.jpeg in Resources */,
 				74F5AC6E1A53ADDA00519C58 /* 8.jpeg in Resources */,
 				74F5AC981A53B2FA00519C58 /* 25.jpeg in Resources */,
+				74F5ACAB1A5412B300519C58 /* soba.jpeg in Resources */,
 				74F5ACA21A53B2FA00519C58 /* 15.jpeg in Resources */,
 				74F5AC9A1A53B2FA00519C58 /* 23.jpeg in Resources */,
 				74F5AC941A53B2FA00519C58 /* 29.jpeg in Resources */,
