@@ -5,6 +5,7 @@
 //  Created by yokoyama.tatsuya on 2014/12/30.
 //  Copyright (c) 2014年 yokoyama.tatsuya. All rights reserved.
 //
+//  2015年をすぎたため、L62にnewTime = afterTime // デバッグ用をたしてます。
 
 import UIKit
 import AVFoundation
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
     // 残り時間を計算
     func calcRestTime() -> Int {
         var newTime = dateFormatter.dateFromString(self.newTimeStr)!
-       // newTime = afterTime // デバッグ用
+        newTime = afterTime // デバッグ用
         var rest = newTime.timeIntervalSinceNow
         return Int(rest)
     }
