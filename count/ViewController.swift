@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     func calcRestTime() -> Int {
         var newTime = dateFormatter.dateFromString(self.newTimeStr)!
         newTime = afterTime // デバッグ用
-        var rest = newTime.timeIntervalSinceNow
+        let rest = newTime.timeIntervalSinceNow
         return Int(rest)
     }
     // 更新
@@ -71,9 +71,9 @@ class ViewController: UIViewController {
             if self.restTime > 0 {
                 currentTime = NSDate()
                 makeView()
-                println("before \(i++), \(self.restTime)")
+                print("before \(i++), \(self.restTime)")
             } else {
-                println("kirikae done")
+                print("kirikae done")
                 self.isChanged = true
                 self.timer.invalidate()
                 play()
@@ -81,14 +81,14 @@ class ViewController: UIViewController {
             }
         } else {
             // 切り替え後
-            println("already")
+            print("already")
         }
     }
     func play() {
         // 音声ファイルパス取得
         let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!)
         // プレイヤー準備
-        player = AVAudioPlayer(contentsOfURL: audioPath, error: nil)
+        player = try? AVAudioPlayer(contentsOfURL: audioPath)
         player.prepareToPlay()
         player.play()
     }

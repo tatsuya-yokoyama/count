@@ -29,7 +29,7 @@ class NextViewController: UIViewController {
             sleep(3)
         }
         // arc4random()の戻り値に合わせてUInt32で除算
-        var rand = Int(arc4random() % UInt32(self.imageNum)) + 1
+        let rand = Int(arc4random() % UInt32(self.imageNum)) + 1
 
         if ++i > 1000 {
             setOmedetoImage()
