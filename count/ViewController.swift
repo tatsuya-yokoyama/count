@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     // 残り時間を計算
     func calcRestTime() -> Int {
         var newTime = dateFormatter.dateFromString(self.newTimeStr)!
-        //newTime = afterTime // デバッグ用
+        newTime = afterTime // デバッグ用
         let rest = newTime.timeIntervalSinceNow
         return Int(rest)
     }
