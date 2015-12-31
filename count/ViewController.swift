@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     // 新年までの時間
     var restTime : Int = 1000
     // 新年になる時刻
-    let newTimeStr : String = "2015/01/01 00:00:00:000"
+    let newTimeStr : String = "2016/01/01 00:00:00:000"
     let afterTime = NSDate(timeIntervalSinceNow: 10);
     // 時刻を扱うクラス(後で色々使う)
     var dateFormatter : NSDateFormatter = NSDateFormatter()
@@ -34,13 +34,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var myImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        myImage!.image = UIImage(named:"soba.jpeg")
+        myImage!.image = UIImage(named:"eva.png")
         setConfig()
         makeView()
         // 更新
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1/100, target: self, selector: "updateView", userInfo: nil, repeats: true)
     }
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.playAtRest()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,7 +56,7 @@ class ViewController: UIViewController {
     }
     // Labelに出力
     func makeView() {
-        myLabelHNY.text = "2015年まで あと\(self.restTime)秒"
+        myLabelHNY.text = "2016年まで あと\(self.restTime)秒"
         myLabel.text = dateFormatter.stringFromDate(currentTime)
     }
     // 残り時間を計算
@@ -83,6 +86,14 @@ class ViewController: UIViewController {
             // 切り替え後
             print("already")
         }
+    }
+    func playAtRest() {
+        // 音声ファイルパス取得
+        let audioPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("fly", ofType: "mp3")!)
+        // プレイヤー準備
+        player = try? AVAudioPlayer(contentsOfURL: audioPath)
+        player.prepareToPlay()
+        player.play()
     }
     func play() {
         // 音声ファイルパス取得
