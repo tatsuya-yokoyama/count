@@ -11,7 +11,7 @@ import UIKit
 class NextViewController: UIViewController {
 
     var i = 0
-    let imageNum = 34
+    let imageNum = 43
     @IBOutlet weak var myImage: UIImageView!
 
     override func viewDidLoad() {

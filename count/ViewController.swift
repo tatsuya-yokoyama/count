@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     // dateFormatterのパラメーターを設定
     func setConfig() {
         self.dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
-        self.dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss:SSS"
+        self.dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss:SS"
     }
     // Labelに出力
     func makeView() {
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     // 残り時間を計算
     func calcRestTime() -> Int {
         var newTime = dateFormatter.dateFromString(self.newTimeStr)!
-        newTime = afterTime // デバッグ用
+        //newTime = afterTime // デバッグ用
         let rest = newTime.timeIntervalSinceNow
         return Int(rest)
     }
